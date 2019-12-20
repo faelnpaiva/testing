@@ -13,7 +13,7 @@ RUN apt-get update && \
     php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
     echo "chmod 777 -R  ./vendor" >> /entrypoint.sh && \
     echo "composer require --dev phpunit/phpunit ^5.6" >> /entrypoint.sh && \
-    echo "phpunit --configuration ./phpunit.xml.dist" >> /entrypoint.sh && \
+    echo "phpunit --debug" >> /entrypoint.sh && \
     chmod +x /entrypoint.sh 
 
 ENV PATH=$PATH:/opt/vendor/bin
